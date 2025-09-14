@@ -1,0 +1,533 @@
+/* Variables pour les couleurs et les polices */
+:root {
+  --primary-font: 'Lato', sans-serif;
+  --secondary-font: 'Playfair Display', serif;
+  --main-color: #333;
+  --accent-color: #000000;
+  --background-block: #ffffff;
+  --white: #fff;
+  --blue-accent: #2a7fb8;
+  --shadow-light: rgba(0, 0, 0, 0.15);
+  --shadow-card: rgba(0, 0, 0, 0.08);
+  --background-color-light: #f7f7f7;
+  --font-size-large: 2.2em;
+  --font-size-medium: 1.3em;
+  --font-size-small: 1em;
+}
+
+/* Styles généraux */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--primary-font);
+  color: var(--main-color);
+  line-height: 1.6;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('images/imagedefond.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* Conteneur principal */
+.main-wrapper {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+  height: auto;
+  align-items: flex-start;
+}
+
+/* Colonnes */
+.left-block {
+  width: 390px;
+  box-sizing: border-box;
+  overflow-y: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nouveau conteneur pour le contenu de la colonne de gauche */
+.left-block-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Conteneur pour aligner le centre et la droite */
+.right-and-center-wrapper {
+  display: flex;
+  flex-grow: 1;
+  gap: 30px;
+  margin-top: 100px;
+}
+
+.center-block {
+  width: 650px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-top: 50px;
+  scrollbar-width: none;
+}
+
+.right-block {
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+/* Sections de contenu */
+.section-block,
+.section-container {
+  background-color: var(--white);
+  padding: 20px;
+  box-shadow: 0 2px 8px var(--shadow-card);
+  margin-bottom: 30px;
+}
+
+.section-block {
+  text-align: center;
+}
+
+.profile-card {
+  margin-bottom: 0;
+}
+
+/* Section Photo de profil */
+.profile-photo {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  overflow: visible;
+  margin: 0 auto 20px;
+  border: none;
+  box-shadow: none;
+}
+
+.profile-photo img {
+  width: 300px; /* C'EST ICI QUE VOUS POUVEZ CHANGER LA TAILLE */
+  height: auto;
+  border-radius: 0;
+}
+
+.profile-card h2 {
+  font-family: var(--secondary-font);
+  font-size: var(--font-size-large);
+  color: #000000;
+  margin: 5px 0 0px;
+}
+
+.profile-card .job-title {
+  font-size: var(--font-size-medium);
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+
+.contact-info p {
+  margin: 0px 0;
+  font-size: 0.9em;
+  color: var(--main-color);
+}
+
+.contact-info p:last-of-type {
+  color: var(--white);
+}
+
+.contact-info a,
+.contact-info a:visited {
+  color: var(--blue-accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.download-button {
+  background-color: var(--blue-accent);
+  color: var(--white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #2a7fb8;
+}
+
+.section-block h3 {
+  font-family: var(--primary-font);
+  font-size: var(--font-size-medium);
+  color: var(--main-color);
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* AJOUT : Marge pour la section "Centres d'intérêts" */
+.interests-section {
+  margin-bottom: 30px;
+}
+
+/* Bloc Logiciels */
+.software-category {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Ajustement de l'espace entre les blocs de droite */
+.software-section {
+  margin-bottom: 30px;
+}
+
+.software-category h4 {
+  font-size: 1em;
+  color: var(--blue-accent);
+  margin: 0 0 10px;
+}
+
+.software-category ul {
+  list-style-type: none;
+  padding: 0 0 0 20px;
+  margin: 0;
+}
+
+.software-category li {
+  font-size: 0.9em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.software-category img {
+  width: 18px;
+  height: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Compétences et intérêts */
+.soft-skills-list,
+.interests-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.soft-skills-list li,
+.interests-list li {
+  position: relative;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+/* Barres de progression des langues */
+.language-bar {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.language-bar p {
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.bar-outer {
+  width: 80%;
+  margin: 0 auto;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Styles pour les barres de progression */
+.bar-inner {
+  height: 100%;
+  background-color: var(--blue-accent);
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+  width: 0; /* La largeur est initialisée à 0 pour l'animation */
+}
+
+/* Styles du bloc central */
+.center-block h2 {
+  font-family: var(--secondary-font);
+  font-size: var(--font-size-medium);
+  color: var(--main-color);
+  margin-bottom: 25px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.experience-card,
+.education-card {
+  background-color: var(--background-color-light);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow-card);
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experience-card:hover,
+.education-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Styles du volet déroulant pour les expériences */
+.experience-header {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.job-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.job-info h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.job-info p {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--accent-color);
+  line-height: 1.4;
+}
+
+.toggle-button {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transition: transform 0.3s ease;
+  margin-right: 10px;
+}
+
+.toggle-button::before {
+  content: '\25BC';
+  font-size: 1.2em;
+  color: #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transition: transform 0.3s ease;
+}
+
+.experience-header.active .toggle-button::before {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.experience-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  padding: 0;
+  margin-top: -10px;
+}
+
+.experience-header.active + .experience-content {
+  max-height: 500px;
+  padding-top: 10px;
+  margin-top: 0;
+}
+
+---
+/* Styles pour les logos des expériences professionnelles
+/* Vous pouvez maintenant définir la taille de chaque logo individuellement ici */
+
+.logo-cadrenoir,
+.logo-chaumont,
+.logo-rvh,
+.logo-lessaules,
+.logo-arcticattitude,
+.logo-villesavin,
+.logo-chambord,
+.logo-nut,
+.logo-thomascook,
+.logo-tik {
+  display: block;
+  margin: 20px auto 0;
+  width: auto;
+  height: auto; /* Utilisez 'height' ou 'max-height' pour contrôler la taille */
+  max-height: 60px; /* Taille par défaut pour tous les logos */
+}
+
+/* Exemples pour ajuster la taille de logos spécifiques */
+.logo-cadrenoir {
+  max-height: 80px;
+  margin: 20px auto 0! important
+}
+
+.logo-rvh {
+  max-height: 70px;
+}
+
+.logo-villesavin {
+  max-height: 70px;
+}
+
+.logo-chambord {
+  max-height: 90px;
+}
+
+.logo-tik {
+  max-height: 40px;
+}
+---
+/* Styles spécifiques pour les formations */
+#formations .education-card {
+  text-align: left;
+}
+
+#formations .education-card h3 {
+  text-align: center;
+}
+
+#formations .education-card p {
+  text-align: left;
+}
+
+/* Styles pour les logos des formations (ajustez les valeurs de "width") */
+.logo-hygien-pass {
+  width: 70px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.logo-efr {
+  width: 70px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.logo-univ-lemans {
+  width: 40px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.logo-ecole-tours {
+  width: 60px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.logo-lycee-blois {
+  width: 70px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.logo-dessaignes {
+  width: 70px; 
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* Fin de la section des logos de formation */
+
+/* Media Queries pour la responsivité */
+@media (max-width: 1400px) {
+  .main-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    height: auto;
+  }
+
+  .left-block,
+  .center-block,
+  .right-block {
+    position: static;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    margin-top: 0;
+  }
+
+  .left-block {
+    order: 1;
+  }
+
+  .center-block {
+    order: 2;
+  }
+
+  .right-block {
+    order: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .main-wrapper {
+    width: 100%;
+  }
+
+  .left-block,
+  .center-block,
+  .right-block {
+    width: 100%;
+    padding: 20px;
+    margin-top: 0;
+  }
+
+  .profile-card h2 {
+    font-size: 1.8em;
+  }
+
+  .profile-card .job-title {
+    font-size: 1.1em;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+
+  .download-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  .center-block h2,
+  .right-block h2 {
+    font-size: 1.5em;
+  }
+}
