@@ -1,16 +1,12 @@
 // --- SCRIPT POUR LES NOTIFICATIONS ---
-// REMPLACER LE LIEN CI-DESSOUS PAR VOTRE PROPRE LIEN GOOGLE APPS SCRIPT
 const webhookUrl = 'https://script.google.com/macros/s/AKfycbwQQHRPLHyu8WQtTpT_hjgzKmMaNysPvBTid0_Whi_dVFnItP1wYn2irUMwZ5F6lwTNxg/exec';
 
-// Fonction pour envoyer une notification via le webhook
 function sendNotification(eventTitle, userAgent, ipAddress) {
-    // Si la page est en local, on n'envoie pas de notification
     if (window.location.hostname === 'localhost' || window.location.protocol === 'file:') {
         console.log(`Notification non envoyée (en mode local) : ${eventTitle}`);
         return;
     }
 
-    // On utilise fetch pour faire une requête en arrière-plan
     fetch(webhookUrl, {
         method: 'POST',
         headers: {
@@ -28,7 +24,6 @@ function sendNotification(eventTitle, userAgent, ipAddress) {
     });
 }
 
-// Fonction pour obtenir l'adresse IP de l'utilisateur (méthode non fiable à 100%)
 function getIP(callback) {
     fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
@@ -36,22 +31,48 @@ function getIP(callback) {
         .catch(() => callback('Inconnue'));
 }
 
-// 1. Événement pour le bouton "Afficher les coordonnées"
-const showContactBtn = document.getElementById('show-contact');
-if (showContactBtn) {
-    showContactBtn.addEventListener('click', () => {
-        getIP(ip => {
-            sendNotification('Coordonnées affichées', navigator.userAgent, ip);
-        });
-    });
-}
+// --- SCRIPT PRINCIPAL ---
+document.addEventListener('DOMContentLoaded', () => {
 
-// 2. Événement pour le lien de téléchargement du CV
-const downloadCvLink = document.getElementById('download-cv');
-if (downloadCvLink) {
-    downloadCvLink.addEventListener('click', () => {
-        getIP(ip => {
-            sendNotification('CV téléchargé', navigator.userAgent, ip);
+    // Événement pour le bouton "Afficher les coordonnées"
+    const showContactBtn = document.getElementById('show-contact');
+    if (showContactBtn) {
+        showContactBtn.addEventListener('click', () => {
+            getIP(ip => {
+                sendNotification('Coordonnées affichées', navigator.userAgent, ip);
+            });
+        });
+    }
+
+    // Événement pour le lien de téléchargement du CV
+    const downloadCvLink = document.getElementById('download-cv');
+    if (downloadCvLink) {
+        downloadCvLink.addEventListener('click', () => {
+            getIP(ip => {
+                sendNotification('CV téléchargé', navigator.userAgent, ip);
+            });
+        });
+    }
+
+    // --- SCRIPT POUR LES CLICS D'EXPÉRIENCE ---
+    const experienceItems = document.querySelectorAll('.experience-card');
+
+    experienceItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('is-expanded');
+
+            const header = item.querySelector('.experience-header');
+            if (header) {
+                header.classList.toggle('active');
+            }
         });
     });
-}
+
+    // --- SCRIPT POUR LES BARRES DE LANGUE (AJOUTÉ) ---
+    const languageBars = document.querySelectorAll('.bar-inner');
+    languageBars.forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        bar.style.width = width;
+    });
+
+});
