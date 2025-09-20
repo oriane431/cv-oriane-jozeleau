@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
 
@@ -21,17 +22,17 @@
     <h2>Oriane JOZELEAU</h2>
     <p class="job-title">Réceptionniste & Médiatrice Culturelle</p>
     <div class="contact-info">
-        <p> 29 ans </p>
-        <p> Saumur, France</p>
+        <p>29 ans</p>
+        <p>Saumur, France</p>
         <p>Permis B, véhiculée</p>
-        <p> 06 34 58 79 85</p>
-        <p> oriane.jozeleau@hotmail.com</p>
         <p><a href="https://www.linkedin.com/in/oriane-jozeleau-b77412224/" target="_blank"><i class="fa-brands fa-linkedin"></i> Voir mon LinkedIn</a></p>
-        <p class="hidden-dot">.</p>
     </div>
-    <a href="documents/CV_Oriane_Jozeleau.pdf" class="download-button" download>
-        Télécharger mon CV
+    <p> </p>
+    <a href="documents/CV_Oriane_Jozeleau.pdf" class="download-button" download id="download-cv">    Télécharger mon CV en PDF
     </a>
+    <div id="contact-container">
+        <button id="show-contact" class="download-button">Afficher mes coordonnées</button>
+    </div>
 </div>
                 
                 <div class="section-block">
@@ -83,28 +84,49 @@
         </div>
 
         <div class="center-block">
-            <div class="section-container" id="experiences">
-                <h2>Expériences professionnelles</h2>
-                
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div class="toggle-button"></div>
-                        <div class="job-info">
-                            <h3>Chargée d’animation auprès des publics, agent d’accueil et de billetterie</h3>
-                            <p>Cadre noir, Saumur (49)</p>
-                            <p>02/2024 - 11/2024 (10 mois)</p>
+    <div class="section-container" id="experiences">
+        <h2>Expériences professionnelles</h2>
+
+        <div class="experience-card">
+            <div class="experience-header">
+                <div class="toggle-button"></div>
+                <div class="job-info">
+                    <h3>Responsable du service réception</h3>
+                    <p>Domaine de la Brèche (49)</p>
+                    <p>03/2025-09/2025 (7 mois)</p>
+                </div>
+            </div>
+            <div class="experience-content hidden">
+                <ul>
+                    <li>Management : recrutement, formation et suivi du personnel saisonnier</li>
+                    <li>Relation client : gestion des réclamations clients</li>
+                    <li>Conception et mise en place de documents optimisés (gestion des ménages, optimisation de la préparation des arrivées, création d'une application support pour les réceptionnistes)</li>
+                </ul>
+                    <a href="https://www.marvilla-parks.com/camping/le-domaine-de-la-breche" target="_blank">
+                                 <img src="images/logo-breche.png" alt="Logo breche" class="logo-breche centered-logo">
+                            </a>
+                </div>
+        </div>
+
+        <div class="experience-card">
+            <div class="experience-header">
+                <div class="toggle-button"></div>
+                <div class="job-info">
+                    <h3>Chargée d’animation auprès des publics, agent d’accueil et de billetterie</h3>
+                    <p>Cadre noir, Saumur (49)</p>
+                    <p>02/2024 - 11/2024 (10 mois)</p>
+                </div>
+            </div>
+            <div class="experience-content hidden">
+                <ul>
+                    <li>Médiation culturelle et guidage : animation de visites guidées (une heure), en français, anglais et espagnol. Prise en charge de publics spécifiques (scolaires tous niveaux, PMR).</li>
+                    <li>Conception de dossiers pédagogiques : élaboration de supports éducatifs dédiés aux groupes scolaires, adaptés à tous les cycles pour anticiper leur visite.</li>
+                    <li>Traduction en direct : des galas et matinales en anglais.</li>
+                </ul>
+                <a href="https://www.ifce.fr/cadre-noir/" target="_blank">
+                                 <img src="images/logo-cadrenoir.png" alt="Logo Cadre noir" class="logo-cadrenoir centered-logo">
+                            </a>
                         </div>
-                    </div>
-                    <div class="experience-content hidden">
-                        <ul>
-                            <li>Médiation culturelle et guidage : animation de visites guidées (une heure), en français, anglais et espagnol. Prise en charge de publics spécifiques (scolaires tous niveaux, PMR).</li>
-                            <li>Conception de dossiers pédagogiques : élaboration de supports éducatifs dédiés aux groupes scolaires, adaptés à tous les cycles pour anticiper leur visite.</li>
-                            <li>Traduction en direct : des galas et matinales en anglais.</li>
-                        </ul>
-                        <a href="https://www.ifce.fr/cadre-noir/" target="_blank">
-                            <img src="images/logo-cadrenoir.png" alt="Logo Cadre noir" class="logo-cadrenoir centered-logo">
-                        </a>
-                    </div>
                 </div>
 
                 <div class="experience-card">
@@ -123,8 +145,8 @@
                             <li>Pédagogie et évènementiel : participation aux animations de Noël et lecture de contes pour un public familial ; appui aux ateliers scolaires.</li>
                         </ul>
                         <a href="https://domaine-chaumont.fr/" target="_blank">
-                            <img src="images/logo-chaumont.png" alt="Logo Domaine de Chaumont" class="logo-chaumont centered-logo">
-                        </a>
+                                 <img src="images/logo-chaumont.png" alt="Logo Domaine de Chaumont" class="logo-chaumont centered-logo">
+                            </a>
                     </div>
                 </div>
 
@@ -144,8 +166,8 @@
                             <li>Veille à la satisfaction : garantir le bon déroulement de l’évènement pour le public, les intervenants et les équipes techniques.</li>
                         </ul>
                         <a href="https://rdv-histoire.com/" target="_blank">
-                            <img src="images/logo-rvh.png" alt="Logo Rendez-vous de l'Histoire" class="logo-rvh centered-logo">
-                        </a>
+                                 <img src="images/logo-rvh.png" alt="Logo Rendez-vous de l'Histoire" class="logo-rvh centered-logo">
+                            </a>
                     </div>
                 </div>
 
@@ -166,8 +188,8 @@
                             <li>Préparation d’audits : gestion et préparation en vue d’améliorations pour l’audit Sites & Paysages et l’audit Qualité tourisme.</li>
                         </ul>
                         <a href="https://www.campinglessaules.com/" target="_blank">
-                            <img src="images/logo-lessaules.png" alt="Logo Camping les Saules" class="logo-lessaules centered-logo">
-                        </a>
+                                 <img src="images/logo-lessaules.png" alt="Logo Camping les Saules" class="logo-lessaules centered-logo">
+                            </a>
                     </div>
                 </div>
 
@@ -188,8 +210,8 @@
                             <li>Rédaction et création : rédaction d’articles pour le site internet et création de supports de médiation pour les enfants.</li>
                         </ul>
                         <a href="https://www.arcticattitude.com/" target="_blank">
-                            <img src="images/logo-arcticattitude.png" alt="Logo Arctic Attitude" class="logo-arcticattitude centered-logo">
-                        </a>
+                                 <img src="images/logo-arcticattitude.png" alt="Logo Arctic Attitude" class="logo-arcticattitude centered-logo">
+                            </a>
                     </div>
                 </div>
 
@@ -209,8 +231,8 @@
                             <li>Projet scolaire : réalisation d’un projet de médiation sur les cartels du musée du mariage pour améliorer l’expérience des visiteurs.</li>
                         </ul>
                         <a href="https://www.chateau-de-villesavin.fr/" target="_blank">
-                            <img src="images/logo-villesavin.png" alt="Logo Château de Villesavin" class="logo-villesavin centered-logo">
-                        </a>
+                                 <img src="images/logo-villesavin.png" alt="Logo Château de Villesavin" class="logo-villesavin centered-logo">
+                            </a>
                     </div>
                 </div>
 
@@ -229,8 +251,8 @@
                             <li>Médiation et surveillance : dans le château.</li>
                         </ul>
                         <a href="https://www.chambord.org/fr/chambord-360-fabuleux-voyage/" target="_blank">
-                            <img src="images/logo-chambord.png" alt="Logo Château de Chambord" class="logo-chambord centered-logo">
-                        </a>
+                                 <img src="images/logo-chambord.png" alt="Logo Château de Chambord" class="logo-chambord centered-logo">
+                            </a>
                     </div>
                 </div>
                 
@@ -250,8 +272,8 @@
                             <li>Gestion du temps : veille à la qualité de l’expérience client tout en respectant le temps imparti.</li>
                         </ul>
                         <a href="https://www.nordicuniquetravels.com/" target="_blank">
-                            <img src="images/logo-nut.png" alt="Logo Nordic Unique Travels" class="logo-nut centered-logo">
-                        </a>
+                                 <img src="images/logo-nut.png" alt="Logo Nordic Unique Travels" class="logo-nut centered-logo">
+                            </a>
                     </div>
                 </div>
                 
@@ -270,8 +292,8 @@
                             <li>Support administratif : vérification des dossiers clients et aide à la gestion des réservations.</li>
                         </ul>
                         <a href="https://www.thomascook.com/" target="_blank">
-                            <img src="images/logo-thomascook.png" alt="Logo Thomas Cook" class="logo-thomascook centered-logo">
-                        </a>
+                                 <img src="images/logo-thomascook.png" alt="Logo Thomas Cook" class="logo-thomascook centered-logo">
+                            </a>
                     </div>
                 </div>
 
@@ -289,8 +311,8 @@
                             <li>Accueil et renseignement : accueil en anglais et français, promotion des activités, évènements et sites patrimoniaux.</li>
                         </ul>
                         <a href="https://visittallinn.ee/" target="_blank">
-                            <img src="images/logo-tik.png" alt="Logo Office de tourisme de Tallinn" class="logo-tik centered-logo">
-                        </a>
+                                 <img src="images/logo-tik.png" alt="Logo Office de tourisme de Tallinn" class="logo-tik centered-logo">
+                            </a>
                     </div>
                 </div>
             </div>
@@ -364,43 +386,42 @@
             </div>
 
             <div class="section-block">
-                <h3>Savoir-être</h3>
-                <ul class="soft-skills-list">
-                    <li>Communication</li>
-                    <li>Travail d'équipe</li>
-                    <li>Adaptabilité</li>
-                    <li>Créativité</li>
-                    <li>Rigueur</li>
-                </ul>
-            </div>
+                  <h3 class="skills-title">Savoir-être</h3>
+<ul class="soft-skills-list" id="softSkillsList">
+    <li class="skill-item">Organisation</li>
+    <li class="skill-item">Adaptabilité</li>
+    <li class="skill-item">Rigueur</li>
+    <li class="skill-item">Minutie</li>
+    <li class="skill-item">Cohésion</li>
+</ul>
+
+<img src="images/cadran.png" alt="Illustration d'un cadran" class="base-image">
+<img src="images/fleches.png" alt="Illustration de flèches" class="animated-arrows"></div>
+
+</div>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Script pour le volet déroulant des expériences
-            const experienceHeaders = document.querySelectorAll('.experience-header');
-            
-            experienceHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const content = header.nextElementSibling;
-                    header.classList.toggle('active');
-                    if (header.classList.contains('active')) {
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                    } else {
-                        content.style.maxHeight = '0';
-                    }
-                });
-            });
+    <script src="script.js"></script>
 
-            // Script pour l'animation des barres de progression
-            const languageBars = document.querySelectorAll('.bar-inner');
-            languageBars.forEach(bar => {
-                // Lit la largeur cible depuis l'attribut data-width
-                const targetWidth = bar.getAttribute('data-width');
-                // Définit la largeur de la barre pour déclencher la transition CSS
-                bar.style.width = targetWidth;
-            });
+    <script>
+        document.getElementById('show-contact').addEventListener('click', function() {
+            // Informations de contact, divisées pour éviter le "scraping" par les robots
+            const email = 'o.jozeleau' + '@' + 'hotmail.com';
+            const phone = '06' + ' ' + '34' + ' ' + '58' + ' ' + '79' + ' ' + '85';
+
+            // Création des éléments à afficher
+            const contactHTML = `
+                <p>
+                    <a href="tel:${phone.replace(/\s/g, '')}">${phone}</a>
+                </p>
+                <p>
+                    <a href="mailto:${email}">${email}</a>
+                </p>
+            `;
+
+            // Remplacement du conteneur du bouton par les informations
+            document.getElementById('contact-container').innerHTML = contactHTML;
         });
     </script>
 </body>
