@@ -15,10 +15,12 @@
     --font-size-small: 1em;
 }
 
+
 /* Styles généraux */
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     font-family: var(--primary-font);
@@ -36,6 +38,7 @@ body {
     box-sizing: border-box;
 }
 
+
 /* Conteneur principal */
 .main-wrapper {
     display: flex;
@@ -47,6 +50,7 @@ body {
     align-items: flex-start;
 }
 
+
 /* Colonnes (MODIFIÉES pour symétrie gauche/droite) */
 .left-block {
     width: 390px;
@@ -56,13 +60,14 @@ body {
     flex-direction: column;
 }
 
+
 /* Nouveau conteneur pour le contenu de la colonne de gauche */
 .left-block-content {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin-bottom: 30px;
 }
+
 
 /* Conteneur pour aligner le centre et la droite */
 .right-and-center-wrapper {
@@ -71,6 +76,7 @@ body {
     gap: 30px;
     margin-top: 0px;
 }
+
 
 .center-block {
     /* Le bloc central prend tout l'espace restant */
@@ -83,11 +89,17 @@ body {
     scrollbar-width: none;
 }
 
+
 .right-block {
     /* Fixe la même largeur que le left-block */
     width: 390px;
     box-sizing: border-box;
+    /* 🛠️ MODIFICATION CLÉ: Ajout de Flexbox et Gap pour gérer l'espacement */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
+
 
 /* Sections de contenu */
 .section-block,
@@ -95,8 +107,10 @@ body {
     background-color: var(--white);
     padding: 20px;
     box-shadow: 0 2px 8px var(--shadow-card);
+    /* 💥 MODIFICATION CLÉ: Suppression de la marge pour laisser le 'gap' du parent faire le travail */
     margin-bottom: 0px;
 }
+
 
 /* Spécifique au bloc de savoir-être */
 .section-block {
@@ -108,9 +122,11 @@ body {
     overflow: visible;
 }
 
+
 .profile-card {
     margin-bottom: 0;
 }
+
 
 /* Section Photo de profil */
 .profile-photo {
@@ -123,12 +139,14 @@ body {
     box-shadow: none;
 }
 
+
 .profile-photo img {
     width: 300px;
     /* C'EST ICI QUE VOUS POUVEZ CHANGER LA TAILLE */
     height: auto;
     border-radius: 0;
 }
+
 
 .profile-card h2 {
     font-family: var(--secondary-font);
@@ -137,11 +155,13 @@ body {
     margin: 5px 0 0px;
 }
 
+
 .profile-card .job-title {
     font-size: var(--font-size-medium);
     color: var(--accent-color);
     margin-bottom: 5px;
 }
+
 
 .contact-info p {
     margin: 0px 0;
@@ -149,7 +169,9 @@ body {
     color: var(--main-color);
 }
 
+
 /* --- CSS pour centrer le bouton de téléchargement --- */
+
 
 .center-button-wrapper {
     /* Utilise flexbox pour centrer l'enfant (le bouton) */
@@ -159,6 +181,7 @@ body {
     margin-bottom: 10px; /* Ajoute un peu d'espace sous le bouton si nécessaire */
 }
 
+
 /* Assurez-vous aussi que le conteneur des coordonnées est centré */
 #contact-container {
     display: flex;
@@ -167,6 +190,7 @@ body {
     text-align: center;
 }
 
+
 /* Le bouton lui-même doit avoir une largeur définie ou maximale,
     sinon le centrage n'aura pas d'effet car il prendra 100% de la largeur */
 .download-button {
@@ -174,27 +198,32 @@ body {
     max-width: 90%;
 }
 
+
 .contact-info p:last-of-type {
     color: var(--white);
 }
 
+
 /* ========================================================================= */
 /* >>> DÉBUT DES STYLES DE LIEN MIS À JOUR (pour téléphone noir / email bleu) <<< */
 /* ========================================================================= */
+
 
 /* 1. Style des liens généraux (Email) : Bleu et non-souligné par défaut */
 /* L'email est ici car il n'est pas :first-child */
 .contact-info a,
 .contact-info a:visited {
     color: var(--blue-accent); /* Garde la couleur bleue pour l'email */
-    text-decoration: none; 
+    text-decoration: none;
     font-weight: bold;
 }
+
 
 /* 2. Style pour le survol de l'email : Devient bleu et souligné */
 .contact-info a:hover {
     text-decoration: underline; /* Souligne l'email au survol */
 }
+
 
 /* 3. Style SPÉCIFIQUE pour le TÉLÉPHONE (qui est le premier lien/paragraphe) : Noir et non souligné */
 #contact-container p:first-child a,
@@ -203,14 +232,18 @@ body {
     text-decoration: none; /* Retire le soulignement du téléphone */
 }
 
+
 /* 4. Style pour le survol du TÉLÉPHONE : Reste Noir et non souligné */
 #contact-container p:first-child a:hover {
     text-decoration: none; /* Ne le souligne pas au survol */
 }
 
+
 /* ========================================================================= */
 /* >>> FIN DES STYLES DE LIEN MIS À JOUR <<< */
 /* ========================================================================= */
+
+
 
 
 /* ===============================================
@@ -219,10 +252,10 @@ RÈGLES .download-button (pour un bon dimensionnement)
 .download-button {
     background-color: var(--blue-accent);
     color: var(--white);
-    
+   
     /* Réduction du padding horizontal */
     padding: 10px 30px;
-    
+   
     text-align: center;
     border: none;
     border-radius: 20px;
@@ -231,13 +264,16 @@ RÈGLES .download-button (pour un bon dimensionnement)
     margin-top: 20px;
     transition: background-color 0.3s ease;
 
+
     /* IMPORTANT : Le rendre inline-block lui permet d'être centré par le Flexbox parent */
     display: inline-block;
 }
 
+
 .download-button:hover {
     background-color: #2a7fb8;
 }
+
 
 .section-block h3 {
     font-family: var(--primary-font);
@@ -249,10 +285,13 @@ RÈGLES .download-button (pour un bon dimensionnement)
     padding-bottom: 5px;
 }
 
+
 /* AJOUT : Marge pour la section "Centres d'intérêts" */
 .interests-section {
+    /* Marge retirée par la règle .section-block générale */
     margin-bottom: 0px;
 }
+
 
 /* NOUVEAU : Supprime les points des listes de la section Centres d'intérêts */
 .interests-section ul {
@@ -262,18 +301,23 @@ RÈGLES .download-button (pour un bon dimensionnement)
     text-align: center;
 }
 
+
 /* ------------------------------------ */
 /* --- STYLES SPÉCIFIQUES: LOGICIELS --- */
 /* ------------------------------------ */
 
+
 .software-section {
-    margin-bottom: 30px;
+    /* 💥 MODIFICATION CLÉ: Retire la marge spécifique pour laisser le 'gap' */
+    margin-bottom: 0px;
 }
+
 
 .software-category {
     margin-bottom: 20px;
     text-align: left;
 }
+
 
 .software-category h4 {
     font-size: 1em;
@@ -281,11 +325,13 @@ RÈGLES .download-button (pour un bon dimensionnement)
     margin: 0 0 10px;
 }
 
+
 .software-category ul {
     list-style-type: none;
     padding: 0 0 0 20px;
     margin: 0;
 }
+
 
 /* Règle pour aligner l'icône et le texte dans la section Logiciels (utilise flex) */
 .software-category li {
@@ -295,6 +341,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
     align-items: center;
 }
 
+
 .software-category img {
     width: 18px;
     height: auto;
@@ -302,10 +349,12 @@ RÈGLES .download-button (pour un bon dimensionnement)
     vertical-align: middle;
 }
 
+
 /* Centre les titres principaux (h3) dans le right-block */
 .right-block .section-block h3 {
     text-align: center;
 }
+
 
 /* Optionnel : si vous voulez centrer aussi les titres de sous-catégories (h4) dans la section 'Logiciels' et 'Formations' */
 .right-block .software-category h4,
@@ -316,21 +365,25 @@ RÈGLES .download-button (pour un bon dimensionnement)
 }
 }
 
+
 /* 1. Centrer le contenu du bloc de coordonnées (âge, lieu, permis, etc.) */
 .left-block .contact-info {
     text-align: center;
 }
+
 
 /* 2. Centrer les titres h3 du bloc de gauche (Langues, Centres d'intérêts) */
 .left-block h3 {
     text-align: center;
 }
 
+
 /* 3. Centrer le titre et le sous-titre de la carte de profil */
 .left-block .profile-card h2,
 .left-block .profile-card .job-title {
     text-align: center;
 }
+
 
 /* 4. Centrer la liste des centres d'intérêts */
 /* Note: Ceci centre le texte des listes, mais pas le point de la liste elle-même.
@@ -342,7 +395,9 @@ RÈGLES .download-button (pour un bon dimensionnement)
     padding-left: 0; /* Optionnel, pour réinitialiser le décalage des listes par défaut */
 }
 
+
 /* Centrer les boutons en utilisant le conteneur parent */
+
 
 /* 1. Centrer le bouton "Télécharger mon CV en PDF" (le lien avec la classe .download-button) */
 /* Cible le parent direct de l'ancre du CV et centre son contenu */
@@ -350,24 +405,30 @@ RÈGLES .download-button (pour un bon dimensionnement)
     /* RETIRÉ: text-align: center; pour éviter le conflit avec le Flexbox parent */
 }
 
+
 /* 2. Centrer le bouton "Afficher mes coordonnées" (dans le conteneur #contact-container) */
 /* Cible le conteneur des coordonnées et centre son contenu (le bouton) */
 #contact-container {
     /* RETIRÉ: text-align: center; pour éviter le conflit avec son propre display: flex */
 }
 
+
 /* ------------------------------------ */
 /* --- STYLES SPÉCIFIQUES: FORMATIONS --- */
 /* ------------------------------------ */
 
+
 .education-section {
-    margin-bottom: 30px;
+    /* 💥 MODIFICATION CLÉ: Retire la marge spécifique pour laisser le 'gap' */
+    margin-bottom: 0px;
 }
+
 
 .education-category {
     margin-bottom: 20px;
     text-align: left;
 }
+
 
 .education-category h4 {
     font-size: 1em;
@@ -375,11 +436,13 @@ RÈGLES .download-button (pour un bon dimensionnement)
     margin: 0 0 10px;
 }
 
+
 .education-category ul {
     list-style-type: none;
     padding: 0 0 0 20px;
     margin: 0;
 }
+
 
 /* Règle pour les listes de formations (le texte ne doit PAS être décalé) */
 .education-category li {
@@ -392,6 +455,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
     text-align: -webkit-match-parent;
 }
 
+
 /* Style de l'icône dans la liste des formations (CORRECTION APPLIQUÉE ICI) */
 .education-category li img {
     width: 18px;
@@ -401,6 +465,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
     display: inline-block; /* Permet à l'icône et au texte d'être sur la même ligne */
 }
 
+
 /* Style du texte en gras (titres de diplômes) */
 .education-category strong {
     font-weight: 700;
@@ -408,9 +473,11 @@ RÈGLES .download-button (pour un bon dimensionnement)
     color: var(--accent-color);
 }
 
+
 /* ------------------------------------ */
 /* --- STYLES: SAVOIR-ÊTRE (LISTE) --- */
 /* ------------------------------------ */
+
 
 .skills-title {
     position: static;
@@ -427,6 +494,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
     text-align: left;
 }
 
+
 /* MODIFICATION: Styles pour la liste des savoir-être (conteneur) */
 .soft-skills-list {
     list-style: none;
@@ -435,9 +503,10 @@ RÈGLES .download-button (pour un bon dimensionnement)
     position: static;
     height: auto;
     display: flex; /* Active l'organisation en colonnes */
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: flex-start; /* Commence l'alignement des éléments à gauche */
 }
+
 
 /* MODIFICATION: Styles pour chaque mot de compétence (list-item) */
 .skill-item {
@@ -453,11 +522,13 @@ RÈGLES .download-button (pour un bon dimensionnement)
     border-bottom: 1px dashed #eee;
 }
 
+
 /* NOUVEAU: Alignement à DROITE pour la colonne de GAUCHE (éléments impairs) */
 .skill-item:nth-child(odd) {
-    text-align: right; 
+    text-align: right;
     padding-right: 10px; /* Marge interne pour séparer du centre */
 }
+
 
 /* NOUVEAU: Alignement à GAUCHE pour la colonne de DROITE (éléments pairs) */
 .skill-item:nth-child(even) {
@@ -465,17 +536,20 @@ RÈGLES .download-button (pour un bon dimensionnement)
     padding-left: 10px; /* Marge interne pour séparer du centre */
 }
 
+
 /* Barres de progression des langues */
 .language-bar {
     margin-bottom: 15px;
     text-align: center;
 }
 
+
 .language-bar p {
     margin: 0 0 5px 0;
     font-weight: 600;
     font-size: 1em;
 }
+
 
 .bar-outer {
     width: 80%;
@@ -486,6 +560,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
     overflow: hidden;
 }
 
+
 /* Styles pour les barres de progression */
 .bar-inner {
     height: 100%;
@@ -493,6 +568,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
     border-radius: 4px;
     transition: width 1s ease-in-out;
 }
+
 
 /* Styles du bloc central */
 .center-block h2 {
@@ -505,24 +581,27 @@ RÈGLES .download-button (pour un bon dimensionnement)
     text-align: center;
 }
 
+
 .experience-card,
 .education-card {
     background-color: var(--background-color-light);
     padding: 20px;
     border-radius: 8px;
-    
+   
     /* MODIFICATION CLÉ: L'ombre est maintenant appliquée ici */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* J'ai pris l'ombre la plus prononcée du hover */
-    
+   
     margin-bottom: 20px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 
 .experience-card:hover,
 .education-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
 
 /* Styles du volet déroulant pour les expériences */
 .experience-header {
@@ -535,10 +614,12 @@ RÈGLES .download-button (pour un bon dimensionnement)
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 .experience-header:hover {
     background-color: #e9e9e9;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
+
 
 .job-info {
     display: flex;
@@ -546,11 +627,13 @@ RÈGLES .download-button (pour un bon dimensionnement)
     flex-grow: 1;
 }
 
+
 .job-info h3 {
     margin: 0;
     font-size: 1em;
     font-weight: 700;
 }
+
 
 .job-info p {
     margin: 0;
@@ -559,6 +642,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
     line-height: 1.4;
 }
 
+
 .toggle-button {
     width: 20px;
     height: 20px;
@@ -566,6 +650,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
     transition: transform 0.3s ease;
     margin-right: 10px;
 }
+
 
 .toggle-button::before {
     content: '\25BC';
@@ -579,6 +664,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
     transition: transform 0.3s ease, font-size 0.5s ease;
 }
 
+
 /* 1. Style de base de l'icône des formations */
 .collapsible-header .toggle-icon {
     font-size: 0.8em;
@@ -587,20 +673,24 @@ RÈGLES .download-button (pour un bon dimensionnement)
     color: #007bff; /* Mettez la couleur bleue souhaitée, si ce n'est pas déjà le cas */
 }
 
+
 /* 2. Rotation de l'icône lorsque l'accordéon est ACTIF (ouvert) */
 .collapsible-header.active .toggle-icon {
     /* La flèche '▼' doit tourner de 180 degrés pour devenir '▲' (ou similaire) */
     transform: rotate(180deg);
 }
 
+
 .experience-header.active .toggle-button::before {
     /* Maintient l'ajustement vertical en position ouverte */
     transform: translate(-50%, -15%) rotate(0deg);
 }
 
+
 .experience-card:hover .toggle-button::before {
     animation: blink-soft 2s infinite;
 }
+
 
 .experience-content {
     max-height: 0;
@@ -614,16 +704,19 @@ RÈGLES .download-button (pour un bon dimensionnement)
     align-items: center;
 }
 
+
 .experience-header.active+.experience-content {
     max-height: 500px;
     padding-top: 10px;
     margin-top: 0;
 }
 
+
 /* Styles pour les logos des expériences professionnelles */
 .experience-card a {
     margin-top: 20px;
 }
+
 
 /* Règle générale pour les images de logo */
 .experience-card img {
@@ -633,32 +726,40 @@ RÈGLES .download-button (pour un bon dimensionnement)
     max-height: 60px;
 }
 
+
 /* Exemples pour ajuster la taille de logos spécifiques */
 /* MODIFIÉ : Sélecteurs plus spécifiques et taille augmentée pour application garantie */
+
 
 .experience-card a .logo-cadrenoir, .logo-cadrenoir {
     max-height: 100px;
 }
 
+
 .experience-card a .logo-rvh, .logo-rvh {
     max-height: 80px;
 }
+
 
 .experience-card a .logo-villesavin, .logo-villesavin {
     max-height: 80px;
 }
 
+
 .experience-card a .logo-chambord, .logo-chambord {
     max-height: 110px;
 }
+
 
 .experience-card a .logo-tik, .logo-tik {
     max-height: 50px;
 }
 
+
 .experience-card a .logo-breche, .logo-breche {
     max-height: 100px;
 }
+
 
 /* Styles spécifiques pour les formations (bloc central) */
 /* Celles-ci sont conservées mais seront peut-être remplacées par les nouvelles ci-dessous si vous déplacez la section */
@@ -666,13 +767,16 @@ RÈGLES .download-button (pour un bon dimensionnement)
     text-align: left;
 }
 
+
 #formations .education-card h3 {
     text-align: center;
 }
 
+
 #formations .education-card p {
     text-align: left;
 }
+
 
 /* Styles pour les logos des formations (bloc central) */
 .logo-hygien-pass {
@@ -682,12 +786,14 @@ RÈGLES .download-button (pour un bon dimensionnement)
     margin: 0 auto 10px;
 }
 
+
 .logo-efr {
     width: 70px;
     height: auto;
     display: block;
     margin: 0 auto 10px;
 }
+
 
 .logo-univ-lemans {
     width: 40px;
@@ -696,12 +802,14 @@ RÈGLES .download-button (pour un bon dimensionnement)
     margin: 0 auto 10px;
 }
 
+
 .logo-ecole-tours {
     width: 60px;
     height: auto;
     display: block;
     margin: 0 auto 10px;
 }
+
 
 .logo-lycee-blois {
     width: 70px;
@@ -710,6 +818,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
     margin: 0 auto 10px;
 }
 
+
 .logo-dessaignes {
     width: 70px;
     height: auto;
@@ -717,28 +826,35 @@ RÈGLES .download-button (pour un bon dimensionnement)
     margin: 0 auto 10px;
 }
 
+
 /* Animation pour le "pulsing" de la flèche */
 @keyframes blink-soft {
     0% {
         opacity: 1;
     }
 
+
     50% {
         opacity: 0.5;
     }
+
 
     100% {
         opacity: 1;
     }
 }
 
+
 /* --- NOUVEAUX STYLES POUR LES FORMATIONS DANS LE BLOC DE DROITE (EN CAS DE FUTUR CHANGEMENT) --- */
 /* Je garde ces classes en bas au cas où vous souhaiteriez réutiliser ce style futur */
 
+
 .formations-section {
-    margin-bottom: 30px;
+    /* Marge retirée par la règle .section-block générale */
+    margin-bottom: 0px;
     text-align: left;
 }
+
 
 .formation-category-card {
     background-color: var(--background-color-light);
@@ -750,9 +866,11 @@ RÈGLES .download-button (pour un bon dimensionnement)
     transition: box-shadow 0.3s ease;
 }
 
+
 .formation-category-card:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
+
 
 .category-header {
     display: flex;
@@ -765,6 +883,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
     color: var(--main-color);
 }
 
+
 .category-header h4 {
     margin: 0;
     font-size: 1em;
@@ -773,19 +892,23 @@ RÈGLES .download-button (pour un bon dimensionnement)
     align-items: center;
 }
 
+
 .category-header i.fas {
     margin-right: 10px;
     color: var(--blue-accent);
 }
+
 
 .toggle-icon {
     transition: transform 0.3s ease;
     color: var(--blue-accent);
 }
 
+
 .formation-category-card.active .toggle-icon {
     transform: rotate(180deg);
 }
+
 
 .category-content {
     max-height: 0;
@@ -794,26 +917,31 @@ RÈGLES .download-button (pour un bon dimensionnement)
     overflow: hidden;
 }
 
+
 .formation-category-card.active .category-content {
     max-height: 500px;
     padding: 15px 15px 5px 15px; /* Ajuster les paddings internes */
 }
+
 
 .education-item {
     padding: 10px 0;
     border-bottom: 1px dashed #eee;
 }
 
+
 .education-item:last-child {
     border-bottom: none;
     padding-bottom: 0;
 }
+
 
 .education-item p {
     margin: 0;
     font-size: 1em;
     line-height: 1.3;
 }
+
 
 .education-item strong {
     display: inline;
@@ -822,16 +950,19 @@ RÈGLES .download-button (pour un bon dimensionnement)
     color: var(--accent-color);
 }
 
+
 .education-item .details {
     color: #666;
     font-size: 0.8em;
 }
+
 
 .education-item img {
     display: block;
     margin: 5px auto 10px;
     height: auto;
 }
+
 
 /* Media Queries pour la responsivité */
 @media (max-width: 1400px) {
@@ -842,6 +973,7 @@ RÈGLES .download-button (pour un bon dimensionnement)
         height: auto;
     }
 
+
     .left-block,
     .center-block,
     .right-block {
@@ -850,19 +982,39 @@ RÈGLES .download-button (pour un bon dimensionnement)
         max-width: 600px;
         padding: 20px;
         margin-top: 0;
+        /* 🛠️ CORRECTION RESPONSIVE : Le 'gap' principal doit être désactivé sur mobile pour revenir à un espacement standard */
+        gap: 0;
     }
+   
+    /* 🛠️ CORRECTION RESPONSIVE : Rétablit l'espacement entre les blocs pour le mode mobile */
+    .left-block-content .section-block,
+    .right-block .section-block {
+        margin-bottom: 30px;
+    }
+   
+    /* 🛠️ CORRECTION RESPONSIVE : Le dernier bloc de section ne doit pas avoir de marge en bas */
+    .left-block-content .section-block:last-child,
+    .right-block .section-block:last-child {
+        margin-bottom: 0;
+    }
+
+
+
 
     .left-block {
         order: 1;
     }
 
+
     .center-block {
         order: 2;
     }
 
+
     .right-block {
         order: 3;
     }
+
 
     /* Ajustement des savoir-être pour une meilleure lecture sur mobile */
     .soft-skills-list {
@@ -875,14 +1027,17 @@ RÈGLES .download-button (pour un bon dimensionnement)
     }
 }
 
+
 @media (max-width: 768px) {
     body {
         padding: 15px;
     }
 
+
     .main-wrapper {
         width: 100%;
     }
+
 
     .left-block,
     .center-block,
@@ -892,9 +1047,11 @@ RÈGLES .download-button (pour un bon dimensionnement)
         margin-top: 0;
     }
 
+
     .profile-card h2 {
         font-size: 1.8em;
     }
+
 
     .profile-card .job-title {
         font-size: 1.1em;
@@ -902,13 +1059,20 @@ RÈGLES .download-button (pour un bon dimensionnement)
         margin-bottom: 15px;
     }
 
+
     .download-button {
         padding: 8px 15px;
         font-size: 1em;
     }
 
+
     .center-block h2,
     .right-block h2 {
         font-size: 1.5em;
     }
+
+
 }
+
+
+
